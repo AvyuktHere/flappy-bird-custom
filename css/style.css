@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #87CEEB;
+    font-family: Arial, sans-serif;
+}
+
+#game-container {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+}
+
+#gameCanvas {
+    background: #4dc1f9;
+    display: none;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    min-width: 200px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #45a049;
+}
+
+#highScoreDisplay {
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.party-popper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.character-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.character-item.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    margin: 10px 0;
+}
+
+.back-btn {
+    background: #f44336;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: #da190b;
+}
